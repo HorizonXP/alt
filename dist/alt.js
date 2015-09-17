@@ -61,7 +61,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/*global window*/
+	/* global window */
 	'use strict';
 
 	Object.defineProperty(exports, '__esModule', {
@@ -79,7 +79,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i]; return arr2; } else { return Array.from(arr); } }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
@@ -107,7 +107,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var Alt = (function () {
 	  function Alt() {
-	    var config = arguments[0] === undefined ? {} : arguments[0];
+	    var config = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 
 	    _classCallCheck(this, Alt);
 
@@ -162,7 +162,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      store.createStoreConfig(this.config, StoreModel);
 	      var Store = store.transformStore(this.storeTransforms, StoreModel);
 
-	      /*istanbul ignore next*/
+	      /* istanbul ignore next */
 	      if (false) delete this.stores[key];
 
 	      if (this.stores[key] || !key) {
@@ -211,7 +211,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var _arguments2 = arguments,
 	          _this2 = this;
 
-	      var exportObj = arguments[1] === undefined ? {} : arguments[1];
+	      var exportObj = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
 
 	      var actions = {};
 	      var key = utils.uid(this._actionsRegistry, ActionsClass.displayName || ActionsClass.name || 'Unknown');
@@ -223,6 +223,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	          fn.assign(actions, utils.getInternalMethods(ActionsClass, true));
 
 	          var ActionsGenerator = (function (_ActionsClass) {
+	            _inherits(ActionsGenerator, _ActionsClass);
+
 	            function ActionsGenerator() {
 	              _classCallCheck(this, ActionsGenerator);
 
@@ -232,8 +234,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	              _get(Object.getPrototypeOf(ActionsGenerator.prototype), 'constructor', this).apply(this, args);
 	            }
-
-	            _inherits(ActionsGenerator, _ActionsClass);
 
 	            _createClass(ActionsGenerator, [{
 	              key: 'generateActions',
@@ -335,11 +335,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	      data[storeInst.displayName] = payload;
 	      return this.serialize(data);
 	    }
-	  }, {
-	    key: 'addActions',
 
 	    // Instance type methods for injecting alt into your application as context
 
+	  }, {
+	    key: 'addActions',
 	    value: function addActions(name, ActionsClass) {
 	      for (var _len9 = arguments.length, args = Array(_len9 > 2 ? _len9 - 2 : 0), _key9 = 2; _key9 < _len9; _key9++) {
 	        args[_key9 - 2] = arguments[_key9];
@@ -760,7 +760,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	function snapshot(instance) {
-	  var storeNames = arguments[1] === undefined ? [] : arguments[1];
+	  var storeNames = arguments.length <= 1 || arguments[1] === undefined ? [] : arguments[1];
 
 	  var stores = storeNames.length ? storeNames : Object.keys(instance.stores);
 	  return stores.reduce(function (obj, storeHandle) {
@@ -857,7 +857,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var _utilsAltUtils = __webpack_require__(8);
 
@@ -915,9 +915,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return state.slice();
 	      } else if (Object.prototype.toString.call(state) === '[object Object]') {
 	        return fn.assign({}, state);
-	      } else {
-	        return state;
 	      }
+
+	      return state;
 	    },
 	    setState: fn.assign
 	  }, globalConfig, StoreModel.config);
@@ -974,6 +974,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // so we can inherit any extensions from the provided store.
 
 	  var Store = (function (_StoreModel) {
+	    _inherits(Store, _StoreModel);
+
 	    function Store() {
 	      _classCallCheck(this, Store);
 
@@ -983,8 +985,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	      _get(Object.getPrototypeOf(Store.prototype), 'constructor', this).apply(this, args);
 	    }
-
-	    _inherits(Store, _StoreModel);
 
 	    return Store;
 	  })(StoreModel);
@@ -1046,9 +1046,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function warn(msg) {
 	  /* istanbul ignore else */
+	  /*eslint-disable*/
 	  if (typeof console !== 'undefined') {
 	    console.warn(new ReferenceError(msg));
 	  }
+	  /*eslint-enable*/
 	}
 
 	function uid(container, name) {
@@ -1143,9 +1145,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	            state: _this.state
 	          });
 	          return false;
-	        } else {
-	          throw e;
 	        }
+
+	        throw e;
 	      }
 	    };
 
@@ -1332,7 +1334,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        var state = _this.getInstance().getState();
 	        var value = spec.local && spec.local.apply(spec, [state].concat(args));
-	        var shouldFetch = spec.shouldFetch ? spec.shouldFetch.apply(spec, [state].concat(args)) : value == null;
+	        var shouldFetch = spec.shouldFetch ? spec.shouldFetch.apply(spec, [state].concat(args))
+	        /*eslint-disable*/
+	        : value == null;
+	        /*eslint-enable*/
 	        var intercept = spec.interceptResponse || function (x) {
 	          return x;
 	        };
@@ -1356,11 +1361,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	          /* istanbul ignore else */
 	          if (spec.loading) spec.loading(intercept(null, spec.loading, args));
 	          return spec.remote.apply(spec, [state].concat(args)).then(makeActionHandler(spec.success), makeActionHandler(spec.error, 1));
-	        } else {
-	          // otherwise emit the change now
-	          _this.emitChange();
-	          return value;
 	        }
+
+	        // otherwise emit the change now
+	        _this.emitChange();
+	        return value;
 	      };
 
 	      return publicMethods;

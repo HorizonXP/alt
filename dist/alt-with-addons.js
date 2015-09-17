@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("react"), require("react/addons"));
+		module.exports = factory(require("react"));
 	else if(typeof define === 'function' && define.amd)
-		define(["react", "react/addons"], factory);
+		define(["react"], factory);
 	else if(typeof exports === 'object')
-		exports["Alt"] = factory(require("react"), require("react/addons"));
+		exports["Alt"] = factory(require("react"));
 	else
-		root["Alt"] = factory(root["react"], root["react/addons"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_20__, __WEBPACK_EXTERNAL_MODULE_25__) {
+		root["Alt"] = factory(root["react"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_20__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -61,7 +61,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/*global window*/
+	/* global window */
 	'use strict';
 
 	Object.defineProperty(exports, '__esModule', {
@@ -79,7 +79,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i]; return arr2; } else { return Array.from(arr); } }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
@@ -107,7 +107,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var Alt = (function () {
 	  function Alt() {
-	    var config = arguments[0] === undefined ? {} : arguments[0];
+	    var config = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 
 	    _classCallCheck(this, Alt);
 
@@ -162,7 +162,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      store.createStoreConfig(this.config, StoreModel);
 	      var Store = store.transformStore(this.storeTransforms, StoreModel);
 
-	      /*istanbul ignore next*/
+	      /* istanbul ignore next */
 	      if (false) delete this.stores[key];
 
 	      if (this.stores[key] || !key) {
@@ -211,7 +211,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var _arguments2 = arguments,
 	          _this2 = this;
 
-	      var exportObj = arguments[1] === undefined ? {} : arguments[1];
+	      var exportObj = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
 
 	      var actions = {};
 	      var key = utils.uid(this._actionsRegistry, ActionsClass.displayName || ActionsClass.name || 'Unknown');
@@ -223,6 +223,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	          fn.assign(actions, utils.getInternalMethods(ActionsClass, true));
 
 	          var ActionsGenerator = (function (_ActionsClass) {
+	            _inherits(ActionsGenerator, _ActionsClass);
+
 	            function ActionsGenerator() {
 	              _classCallCheck(this, ActionsGenerator);
 
@@ -232,8 +234,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	              _get(Object.getPrototypeOf(ActionsGenerator.prototype), 'constructor', this).apply(this, args);
 	            }
-
-	            _inherits(ActionsGenerator, _ActionsClass);
 
 	            _createClass(ActionsGenerator, [{
 	              key: 'generateActions',
@@ -335,11 +335,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	      data[storeInst.displayName] = payload;
 	      return this.serialize(data);
 	    }
-	  }, {
-	    key: 'addActions',
 
 	    // Instance type methods for injecting alt into your application as context
 
+	  }, {
+	    key: 'addActions',
 	    value: function addActions(name, ActionsClass) {
 	      for (var _len9 = arguments.length, args = Array(_len9 > 2 ? _len9 - 2 : 0), _key9 = 2; _key9 < _len9; _key9++) {
 	        args[_key9 - 2] = arguments[_key9];
@@ -760,7 +760,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	function snapshot(instance) {
-	  var storeNames = arguments[1] === undefined ? [] : arguments[1];
+	  var storeNames = arguments.length <= 1 || arguments[1] === undefined ? [] : arguments[1];
 
 	  var stores = storeNames.length ? storeNames : Object.keys(instance.stores);
 	  return stores.reduce(function (obj, storeHandle) {
@@ -857,7 +857,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var _utilsAltUtils = __webpack_require__(8);
 
@@ -915,9 +915,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return state.slice();
 	      } else if (Object.prototype.toString.call(state) === '[object Object]') {
 	        return fn.assign({}, state);
-	      } else {
-	        return state;
 	      }
+
+	      return state;
 	    },
 	    setState: fn.assign
 	  }, globalConfig, StoreModel.config);
@@ -974,6 +974,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // so we can inherit any extensions from the provided store.
 
 	  var Store = (function (_StoreModel) {
+	    _inherits(Store, _StoreModel);
+
 	    function Store() {
 	      _classCallCheck(this, Store);
 
@@ -983,8 +985,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	      _get(Object.getPrototypeOf(Store.prototype), 'constructor', this).apply(this, args);
 	    }
-
-	    _inherits(Store, _StoreModel);
 
 	    return Store;
 	  })(StoreModel);
@@ -1046,9 +1046,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function warn(msg) {
 	  /* istanbul ignore else */
+	  /*eslint-disable*/
 	  if (typeof console !== 'undefined') {
 	    console.warn(new ReferenceError(msg));
 	  }
+	  /*eslint-enable*/
 	}
 
 	function uid(container, name) {
@@ -1143,9 +1145,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	            state: _this.state
 	          });
 	          return false;
-	        } else {
-	          throw e;
 	        }
+
+	        throw e;
 	      }
 	    };
 
@@ -1332,7 +1334,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        var state = _this.getInstance().getState();
 	        var value = spec.local && spec.local.apply(spec, [state].concat(args));
-	        var shouldFetch = spec.shouldFetch ? spec.shouldFetch.apply(spec, [state].concat(args)) : value == null;
+	        var shouldFetch = spec.shouldFetch ? spec.shouldFetch.apply(spec, [state].concat(args))
+	        /*eslint-disable*/
+	        : value == null;
+	        /*eslint-enable*/
 	        var intercept = spec.interceptResponse || function (x) {
 	          return x;
 	        };
@@ -1356,11 +1361,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	          /* istanbul ignore else */
 	          if (spec.loading) spec.loading(intercept(null, spec.loading, args));
 	          return spec.remote.apply(spec, [state].concat(args)).then(makeActionHandler(spec.success), makeActionHandler(spec.error, 1));
-	        } else {
-	          // otherwise emit the change now
-	          _this.emitChange();
-	          return value;
 	        }
+
+	        // otherwise emit the change now
+	        _this.emitChange();
+	        return value;
 	      };
 
 	      return publicMethods;
@@ -1662,7 +1667,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * addActionListener(symAction: symbol, handler: function): number
 	 * Adds a listener to a specified action and returns the dispatch token.
 	 */
-	ActionListeners.prototype.addActionListener = function (symAction, handler) {
+	ActionListeners.prototype.addActionListener = function addActionListener(symAction, handler) {
 	  var id = this.dispatcher.register(function (payload) {
 	    /* istanbul ignore else */
 	    if (symAction === payload.action) {
@@ -1677,7 +1682,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * removeActionListener(id: number): undefined
 	 * Removes the specified dispatch registration.
 	 */
-	ActionListeners.prototype.removeActionListener = function (id) {
+	ActionListeners.prototype.removeActionListener = function removeActionListener(id) {
 	  delete this.listeners[id];
 	  this.dispatcher.unregister(id);
 	};
@@ -1685,7 +1690,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Remove all listeners.
 	 */
-	ActionListeners.prototype.removeAllActionListeners = function () {
+	ActionListeners.prototype.removeAllActionListeners = function removeAllActionListeners() {
 	  Object.keys(this.listeners).forEach(this.removeActionListener.bind(this));
 	  this.listeners = {};
 	};
@@ -1760,10 +1765,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: function get(altKey) {
 	      return this.alts[altKey];
 	    }
-	  }, {
-	    key: 'all',
 
 	    // returns all alt instances
+	  }, {
+	    key: 'all',
 	    value: function all() {
 	      return this.alts;
 	    }
@@ -1847,7 +1852,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	function DispatcherRecorder(alt) {
-	  var maxEvents = arguments[1] === undefined ? Infinity : arguments[1];
+	  var maxEvents = arguments.length <= 1 || arguments[1] === undefined ? Infinity : arguments[1];
 
 	  this.alt = alt;
 	  this.events = [];
@@ -1860,7 +1865,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * in progress.
 	 * record(): boolean
 	 */
-	DispatcherRecorder.prototype.record = function () {
+	DispatcherRecorder.prototype.record = function record() {
 	  var _this = this;
 
 	  if (this.dispatchToken) {
@@ -1880,7 +1885,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * Stops the recording in progress.
 	 * stop(): undefined
 	 */
-	DispatcherRecorder.prototype.stop = function () {
+	DispatcherRecorder.prototype.stop = function stop() {
 	  this.alt.dispatcher.unregister(this.dispatchToken);
 	  this.dispatchToken = null;
 	};
@@ -1889,7 +1894,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * Clear all events from memory.
 	 * clear(): undefined
 	 */
-	DispatcherRecorder.prototype.clear = function () {
+	DispatcherRecorder.prototype.clear = function clear() {
 	  this.events = [];
 	};
 
@@ -1897,7 +1902,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * (As|S)ynchronously replay all events that were recorded.
 	 * replay(replayTime: ?number, done: ?function): undefined
 	 */
-	DispatcherRecorder.prototype.replay = function (replayTime, done) {
+	DispatcherRecorder.prototype.replay = function replay(replayTime, done) {
 	  var alt = this.alt;
 
 	  if (replayTime === void 0) {
@@ -1931,7 +1936,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * a separate recorder.
 	 * serializeEvents(): string
 	 */
-	DispatcherRecorder.prototype.serializeEvents = function () {
+	DispatcherRecorder.prototype.serializeEvents = function serializeEvents() {
 	  var events = this.events.map(function (event) {
 	    return {
 	      id: event.id,
@@ -1946,7 +1951,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * Load serialized events into the recorder and overwrite the current events
 	 * loadEvents(events: string): undefined
 	 */
-	DispatcherRecorder.prototype.loadEvents = function (events) {
+	DispatcherRecorder.prototype.loadEvents = function loadEvents(events) {
 	  var parsedEvents = JSON.parse(events);
 	  this.events = parsedEvents.map(function (event) {
 	    return {
@@ -1978,7 +1983,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var _makeFinalStore = __webpack_require__(18);
 
@@ -1988,6 +1993,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function makeAtomicClass(alt, StoreModel) {
 	  var AtomicClass = (function (_StoreModel) {
+	    _inherits(AtomicClass, _StoreModel);
+
 	    function AtomicClass() {
 	      _classCallCheck(this, AtomicClass);
 
@@ -1996,8 +2003,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return alt.rollback();
 	      });
 	    }
-
-	    _inherits(AtomicClass, _StoreModel);
 
 	    return AtomicClass;
 	  })(StoreModel);
@@ -2147,7 +2152,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _functions = __webpack_require__(6);
 
 	function connectToStores(Spec) {
-	  var Component = arguments[1] === undefined ? Spec : arguments[1];
+	  var Component = arguments.length <= 1 || arguments[1] === undefined ? Spec : arguments[1];
 	  return (function () {
 	    // Check for required static methods.
 	    if (!(0, _functions.isFunction)(Spec.getStores)) {
@@ -2194,6 +2199,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return _react2['default'].createElement(Component, (0, _functions.assign)({}, this.props, this.state));
 	      }
 	    });
+	    if (Component.contextTypes) {
+	      StoreConnection.contextTypes = Component.contextTypes;
+	    }
 
 	    return StoreConnection;
 	  })();
@@ -2212,7 +2220,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 21 */
 /***/ function(module, exports) {
 
-	/*global window*/
+	/* global window */
 	'use strict';
 
 	Object.defineProperty(exports, '__esModule', {
@@ -2276,6 +2284,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
+	/*eslint-disable*/
 	/**
 	 * AltContainer.
 	 *
@@ -2334,9 +2343,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	 */
 	'use strict';
 
-	var React = __webpack_require__(25);
-	var mixinContainer = __webpack_require__(26);
-	var assign = __webpack_require__(28).assign;
+	var React = __webpack_require__(20);
+	var mixinContainer = __webpack_require__(25);
+	var assign = __webpack_require__(27).assign;
 
 	var AltContainer = React.createClass(assign({
 	  displayName: 'AltContainer',
@@ -2350,18 +2359,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 25 */
-/***/ function(module, exports) {
-
-	module.exports = __WEBPACK_EXTERNAL_MODULE_25__;
-
-/***/ },
-/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
+	/*eslint-disable*/
 	'use strict';
 
-	var Subscribe = __webpack_require__(27);
-	var assign = __webpack_require__(28).assign;
+	var Subscribe = __webpack_require__(26);
+	var assign = __webpack_require__(27).assign;
 
 	function id(it) {
 	  return it;
@@ -2376,7 +2380,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	function mixinContainer(React) {
-	  var cloneWithProps = React.addons.cloneWithProps;
+	  var cloneWithProps = React.cloneElement;
 
 	  return {
 	    contextTypes: {
@@ -2527,7 +2531,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = mixinContainer;
 
 /***/ },
-/* 27 */
+/* 26 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2556,7 +2560,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = Subscribe;
 
 /***/ },
-/* 28 */
+/* 27 */
 /***/ function(module, exports) {
 
 	'use strict';

@@ -15,7 +15,7 @@ function getStateFromKey(actions, props) {
 }
 
 function mixinContainer(React) {
-  var cloneWithProps = React.addons.cloneWithProps
+  var cloneWithProps = React.cloneElement
 
   return {
     contextTypes: {

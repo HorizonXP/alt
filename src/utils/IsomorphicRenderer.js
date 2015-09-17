@@ -27,13 +27,15 @@
 
 import Iso from 'iso'
 import React from 'react'
+import ReactDOM from 'react-dom'
+import ReactDOMServer from 'react-dom/server'
 
 export default function IsomorphicRenderer(alt, App) {
   /*eslint-disable */
   if (typeof window === 'undefined') {
     /*eslint-enable */
     return () => {
-      const app = React.renderToString(React.createElement(App))
+      const app = ReactDOMServer.renderToString(React.createElement(App))
       const markup = Iso.render(app, alt.takeSnapshot())
       alt.flush()
       return markup
@@ -43,6 +45,6 @@ export default function IsomorphicRenderer(alt, App) {
   Iso.bootstrap((state, _, node) => {
     const app = React.createElement(App)
     alt.bootstrap(state)
-    React.render(app, node)
+    ReactDOM.render(app, node)
   })
 }
