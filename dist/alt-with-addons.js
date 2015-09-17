@@ -2365,7 +2365,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	'use strict';
 
 	var Subscribe = __webpack_require__(26);
-	var assign = __webpack_require__(27).assign;
+	var assign = __webpack_require__(27);
 
 	function id(it) {
 	  return it;
