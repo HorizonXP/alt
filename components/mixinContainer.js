@@ -1,6 +1,6 @@
 /*eslint-disable*/
 var Subscribe = require('../mixins/Subscribe')
-var assign = require('../utils/functions')
+var assign = require('../utils/functions').assign
 
 function id(it) {
   return it
